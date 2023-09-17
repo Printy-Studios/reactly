@@ -7,7 +7,7 @@ import { execSync, ExecSyncOptionsWithBufferEncoding } from 'child_process';
 import ExecInstance from './exec';
 
 //Constants
-import { dev_deps, deps } from 'const/package_json_deps';
+import * as package_json_defaults from 'const/package_json_defaults';
 
 /**
  * Initialize a Reactly project
@@ -43,8 +43,9 @@ export default async function init(
     
     const _package_json = {
         ...package_json,
-        devDependencies: dev_deps,
-        dependencies: deps,
+        scripts: package_json_defaults.scripts,
+        devDependencies: package_json_defaults.dev_deps,
+        dependencies: package_json_defaults.deps,
     }
 
     await fs.writeFileSync(path.join(project_path, 'package.json'), JSON.stringify(_package_json, null, 4))
