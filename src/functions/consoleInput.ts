@@ -6,7 +6,7 @@ type ConsoleInputConfig = {
 }
 
 const consoleInput = {
-    confirm: async (config = { message: 'Confirm?', default: false} ) => {
+    confirm: async (config: ConsoleInputConfig = { message: 'Confirm?', default: false} ) => {
 
         const default_str:string = config.default ? 'y' : 'n'
 

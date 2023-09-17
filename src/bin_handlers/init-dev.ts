@@ -7,11 +7,11 @@ import consoleInput from 'functions/consoleInput'
 export const command = 'init-dev <folder_name>'
 
 //Run initialization in console
-const consoleInit = (target_folder_name: string) => {
+const consoleInit = async (target_folder_name: string) => {
     const target_dir = path.join(process.env.INIT_CWD, target_folder_name)
     const package_json_exists = fs.existsSync(path.join(target_dir, 'package.json'))
     if(package_json_exists) {
-        const do_overwrite = consoleInput.confirm({
+        const do_overwrite = await consoleInput.confirm({
             message: 'This folder already has a package.json, do you want to overwite this folder with a new project?',
             default: false
         })
@@ -30,6 +30,7 @@ const consoleInit = (target_folder_name: string) => {
     }
 
     init(
+        true,
         target_dir,
         {
             name: project_name
@@ -37,10 +38,10 @@ const consoleInit = (target_folder_name: string) => {
     )
 }
 
-export const handler = (argv) => {
+export const handler = async (argv) => {
     console.log('Initializing Reactly in dev mode')
 
-    consoleInit(argv.folder_name)
+    await consoleInit(argv.folder_name)
 
     //init()
 }
