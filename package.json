@@ -1,0 +1,38 @@
+{
+  "name": "@printy/reactly",
+  "version": "0.0.0",
+  "description": "A React build tool like Vite or create-react-app",
+  "main": "index.js",
+  "scripts": {
+    "reactly": "tsc && node dist/bin/reactly.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "_moduleAliases": {
+    "bin_handlers": "dist/bin_handlers",
+    "functions": "dist/functions",
+    "const": "dist/const"
+  },
+  "keywords": [
+    "react",
+    "build",
+    "tool",
+    "environment"
+  ],
+  "author": "JorensM",
+  "license": "MIT",
+  "dependencies": {
+    "@inquirer/input": "^1.2.11",
+    "@printy/reactly": "file:",
+    "module-alias": "^2.2.3",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.2",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@types/yargs": "^17.0.24",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.2.2"
+  }
+}

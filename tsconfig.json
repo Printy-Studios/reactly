@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "*": [ "./*" ]
+        },
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "types": [ "node" ]
+    },
+    "exclude": [ "template" ]
+}
